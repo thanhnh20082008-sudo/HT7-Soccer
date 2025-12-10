@@ -1,9 +1,10 @@
 body {
-    margin: 0;
-    font-family: Arial;
+    background-color: #FFFACD; 
+    margin: 0; 
+    padding: 0;
+    font-family: Arial, sans-serif; 
 }
 
-/* -------------------- HEADER (LOGO & CHỮ) -------------------- */
 .header-container {
     display: flex;
     align-items: center;
@@ -26,7 +27,6 @@ body {
     margin: 5px 0 0 0;
 }
 
-/* -------------------- BANNER FULL MÀN HÌNH -------------------- */
 .banner-full {
     width: 100%;
     margin-top: 5px;
@@ -39,7 +39,6 @@ body {
     display: block;
 }
 
-/* -------------------- MENU (ĐÃ CĂN GIỮA) -------------------- */
 .menu {
     background: #000;
     padding: 10px;
@@ -55,15 +54,35 @@ body {
     font-weight: bold;
 }
 
-/* -------------------- NỘI DUNG CHÍNH (CONTENT) -------------------- */
-.content {
-    width: 100%; /* Đảm bảo nó chiếm hết chiều rộng của thẻ cha mới (.main-content-area) */
-    margin: 0; 
-    padding: 20px; /* Giữ padding */
-    box-sizing: border-box; /* Tính padding vào width 100% */
+.main-menu {
+    display: flex; 
+    justify-content: flex-end; 
+    align-items: center;
+    
 }
-/* -------------------- ẢNH SẢN PHẨM RIÊNG LẺ (trên trang con như Adidas) -------------------- */
-/* LƯU Ý: Nếu ảnh sản phẩm vẫn nằm trong .content, nó chỉ căn giữa trong 70% */
+
+.cart-icon {
+    margin-left: 30px; 
+    padding: 5px 10px;
+    font-weight: bold;
+    color: #FF4500; /* Màu cam đỏ */
+    animation: blink-animation 1s steps(5, start) infinite; 
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+.content {
+    width: 100%; 
+    margin: 0; 
+    padding: 20px; 
+    box-sizing: border-box; 
+}
+
 .product-image {
     width: 100%;
     height: auto;
@@ -71,7 +90,6 @@ body {
     margin: 20px auto;
 }
 
-/* -------------------- THÊM MỚI: HIỂN THỊ 3 THƯƠNG HIỆU NỔI BẬT -------------------- */
 .brand-showcase {
     display: flex;
     justify-content: space-around;
@@ -104,45 +122,38 @@ body {
     font-weight: normal;
 }
 
-/* -------------------- HIỂN THỊ 3 LOẠI GIÀY (Trang giay-adidas.html) -------------------- */
-
-
-/* -------------------- HIỆU ỨNG HOVER CHUYỂN ẢNH (ĐÃ KHẮC PHỤC LỖI HIỂN THỊ) -------------------- */
 
 .product-link {
     display: block;
     overflow: hidden;
 }
 
-/* Thẻ BỌC ẢNH (.image-wrapper) để giữ chiều cao cột */
+
 .image-wrapper {
-    position: relative; /* Thiết lập bối cảnh cho ảnh absolute */
-    padding-bottom: 100%; /* Giữ tỷ lệ khung hình (1:1) */
+    position: relative; 
+    padding-bottom: 100%; 
     height: 0;
     margin-bottom: 10px; 
 }
 
-/* Ảnh MẶC ĐỊNH (.normal-img) và Ảnh HOVER (.hover-img) */
 .product-link .normal-img,
 .product-link .hover-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    position: absolute; /* Chồng ảnh lên nhau */
+    position: absolute; 
     top: 0;
     left: 0;
-    transition: opacity 0.3s ease; /* Chuyển đổi mượt mà */
-    border: 1px solid #ccc; /* Thêm viền nhẹ */
+    transition: opacity 0.3s ease; 
+    border: 1px solid #ccc; 
     border-radius: 5px;
 }
 
-/* Ảnh HOVER MẶC ĐỊNH BỊ ẨN */
 .product-link .hover-img {
     opacity: 0; 
 }
 
-/* KHI RÊ CHUỘT VÀO THẺ CHA (.product-link) */
 .product-link:hover .normal-img {
     opacity: 0; 
 }
@@ -151,23 +162,21 @@ body {
     opacity: 1; 
 }
 
-/* -------------------- LAYOUT LƯỚI SẢN PHẨM (4 cột) -------------------- */
 
 .types-showcase {
     display: flex;
-    flex-wrap: wrap; /* Cho phép các mục xuống dòng */
-    justify-content: flex-start; /* Xếp các mục từ trái sang */
-    gap: 15px; /* Khoảng cách giữa các cột và hàng */
+    flex-wrap: wrap; 
+    justify-content: flex-start; 
+    gap: 15px; 
     text-align: left;
     margin-top: 30px;
 }
 
 .type-item {
-    /* Thiết lập chiều rộng cho 4 cột, trừ đi gap */
     width: calc(25% - 15px); 
     padding: 0;
     margin-bottom: 20px; 
-    border: 1px solid #eee; /* Viền thẻ sản phẩm */
+    border: 1px solid #eee; 
     border-radius: 5px;
     overflow: hidden;
     transition: box-shadow 0.3s ease;
@@ -184,12 +193,11 @@ body {
     height: 100%;
 }
 
-/* -------------------- KHU VỰC ẢNH VÀ NHÃN (BADGES) -------------------- */
 
 .product-image-container {
     position: relative; 
     width: 100%;
-    padding-bottom: 100%; /* Giữ tỷ lệ khung hình 1:1 */
+    padding-bottom: 100%; 
     height: 0;
     overflow: hidden;
     background-color: #f7f7f7;
@@ -205,8 +213,6 @@ body {
     display: block;
 }
 
-/* -------------------- ĐỊNH DẠNG NHÃN (BADGES) -------------------- */
-
 .badge {
     position: absolute;
     color: white;
@@ -217,37 +223,34 @@ body {
     text-transform: uppercase;
 }
 
-/* Nhãn giảm giá (-36%) - Top Left */
 .discount-badge {
-    background-color: #e74c3c; /* Màu đỏ */
+    background-color: #e74c3c; 
     top: 0;
     left: 0;
     border-radius: 0 0 5px 0;
 }
 
-/* Nhãn khuyến mãi (GIÁ TỐT) - Top Right */
+
 .sale-badge {
-    background-color: #f1c40f; /* Màu vàng */
+    background-color: #f1c40f; 
     color: #333;
     top: 0;
     right: 0;
     border-radius: 0 0 0 5px;
 }
 
-/* Nhãn tình trạng (SẮP HẾT HÀNG) */
 .status-badge {
-    background-color: #9b59b6; /* Màu tím */
+    background-color: #9b59b6; 
     color: white;
-    top: 15px; /* Dịch xuống dưới nhãn discount 1 chút */
+    top: 15px; 
     left: 0;
     border-radius: 0 5px 5px 0;
 }
 
-/* -------------------- KHU VỰC THÔNG TIN (INFO) -------------------- */
 
 .product-info {
     padding: 10px;
-    text-align: left; /* Chữ căn trái giống Thanh Hùng */
+    text-align: left; 
 }
 
 .product-title {
@@ -273,10 +276,9 @@ body {
     margin: 5px 0 0 0;
 }
 
-/* -------------------- NÚT THÊM VÀO GIỎ HÀNG -------------------- */
 
 .add-to-cart {
-    background-color: #e74c3c; /* Màu nền đỏ nổi bật */
+    background-color: #e74c3c; 
     color: white;
     border: none;
     padding: 8px 15px;
@@ -285,32 +287,27 @@ body {
     font-size: 13px;
     font-weight: bold;
     border-radius: 5px;
-    width: 100%; /* Chiếm toàn bộ chiều rộng của thẻ cha */
+    width: 100%; 
     transition: background-color 0.3s ease, transform 0.3s ease;
-    /* Dùng display: block để nút chiếm hết chiều rộng */
     display: block; 
     text-align: center;
 }
 
-/* Hiệu ứng nhấp nháy/Lắc nhẹ khi rê chuột (Hover Effect) */
 .add-to-cart:hover {
-    background-color: #c0392b; /* Đổi màu đậm hơn khi hover */
-    /* Hiệu ứng lắc nhẹ (có thể dùng hiệu ứng scale hoặc shadow thay thế) */
+    background-color: #c0392b; 
     transform: scale(1.02) translateY(-2px); 
-    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.4); /* Thêm bóng nổi */
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.4); 
 }
 
-/* Bọc 3 cột lại */
 .content-layout-wrapper {
     display: flex;
     width: 100%;
     max-width: 1400px;
     margin: 20px auto;
     gap: 20px;
-    align-items: flex-start; /* Không đẩy cột lên lộn xộn */
+    align-items: flex-start; 
 }
 
-/* 2 bên quảng cáo */
 .ad-sidebar {
     width: 200px;
     flex-shrink: 0;
@@ -324,8 +321,6 @@ body {
     border-radius: 8px;
 }
 
-
-/* Vùng nội dung ở giữa */
 .main-content-area {
     flex: 1;
     min-width: 0;
